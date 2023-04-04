@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./lib/slider/slick.css"/>
     <link rel="stylesheet" type="text/css" href="./lib/slider/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="./lib/color-picker/index.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./lib/modal/jquery.modal.min.css"/>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Калькулятор</title>
 </head>
@@ -16,6 +17,7 @@
 <script type="text/javascript" src="./lib/jquery.min.js"></script>
 <script type="text/javascript" src="./lib/slider/slick.js"></script>
 <script type="text/javascript" src="./lib/color-picker/index.min.js"></script>
+<script type="text/javascript" src="../lib/modal/jquery.modal.min.js"></script>
 <script type="text/javascript" src="./js/main.js"></script>
 <script type="text/javascript">
   $('.design__slider').length && $('.design__slider').slick({
@@ -42,10 +44,6 @@
 
   $('a[data-modal]').click(function (event) {
     $(this).modal({
-      escapeClose: false,
-      clickClose: false,
-      showClose: false,
-      closeExisting: false,
       fadeDuration: 300,
       fadeDelay: 0,
     });

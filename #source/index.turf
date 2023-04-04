@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./lib/slider/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./lib/slider/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="./lib/color-picker/index.min.css"/>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Калькулятор</title>
 </head>
@@ -11,6 +14,89 @@
     <!--@import "index.html"-->
 </div>
 <script type="text/javascript" src="./lib/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/slider/slick.js"></script>
+<script type="text/javascript" src="../lib/color-picker/index.min.js"></script>
 <script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript">
+  $('.design__slider').length && $('.design__slider').slick({
+    arrows: false,
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    focusOnSelect: true,
+    centerPadding: '175px',
+  });
+
+  $('.filling__slider').length && $('.filling__slider').slick({
+    arrows: false,
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    focusOnSelect: true,
+    centerPadding: '175px',
+  });
+
+  $('a[data-modal]').click(function (event) {
+    $(this).modal({
+      escapeClose: false,
+      clickClose: false,
+      showClose: false,
+      closeExisting: false,
+      fadeDuration: 300,
+      fadeDelay: 0,
+    });
+    return false;
+  });
+
+
+  function enableColorPickerEffect(picker, property, change, duration) {
+    if (picker.hasEffect) {
+      return;
+    }
+    picker.hasEffect = true;
+    picker.self.style[property] = change[0];
+    picker.self.style.transition = property + ' ' + (duration / 1000) + 's ease';
+    picker.self.addEventListener('transitionend', function () {
+      let value = +(this.style[property] || change[0]);
+      change[0] === value && picker.exit(); // Hide color picker panel on transition end
+    });
+    picker.on('focus', function () {
+      this.enter();
+      this.self.style[property] = change[1];
+    });
+    picker.on('blur', function () {
+      this.self.style[property] = change[0];
+    });
+  }
+
+  function replaceWithColorBox(source) {
+    if (source.hasColorBox) {
+      return;
+    }
+    source.hasColorBox = true;
+    source.noAlpha = true;
+    let box = document.querySelector('.color-picker'),
+      color = source.value;
+    box.value = color; // Hacky :(
+    box.style.backgroundColor = color;
+    source.parentNode.insertBefore(box, source);
+    source.type = 'hidden';
+    const picker = new CP(box);
+    enableColorPickerEffect(picker, 'opacity', [0, 1], 250);
+    picker.on('change', function (r, g, b, a) {
+      let color = this.color(r, g, b, a);
+      source.value = color;
+      this.source.value = color; // Hacky :(
+      this.source.style.backgroundColor = color;
+    });
+  }
+
+  replaceWithColorBox(document.querySelector('#color-picker'));
+
+</script>
 </body>
-</html>ё
+</html>

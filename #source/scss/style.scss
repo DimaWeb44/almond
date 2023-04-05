@@ -146,6 +146,9 @@
           font-weight: normal;
           font-style: italic;
           text-align: center;
+          & span {
+            margin-right: 7px;
+          }
           @media (max-width: 1100px) {
             font-size: 16px;
           }
@@ -266,7 +269,7 @@
 
         & .radio {
           width: 100%;
-          margin-right: 25px;
+          margin-right: 20px;
           padding: 14px;
           border: 1px solid #80594F;
           display: flex;
@@ -532,19 +535,24 @@
   }
 
   &__right {
-    height: 100%;
+    position: sticky;
+    top: 25px;
+    height: auto;
     min-width: 340px;
     background-color: #ADB38E;
     padding: 14px;
     @media (max-width: 720px) {
       min-width: auto;
     }
+    @media (max-height: 799px) {
+      position: static;
+    }
 
     &__box {
       border: 1px solid #ffffff;
       width: 100%;
       height: 100%;
-      padding: 15px 20px 25px 20px;
+      padding: 15px 20px 10px 20px;
       position: relative;
 
       &__icon {
@@ -557,7 +565,7 @@
       &__title {
         margin: 0 auto;
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
 
         &__text {
           font-size: 48px;
@@ -581,9 +589,9 @@
         color: #80594F;
         font-weight: normal;
         font-style: italic;
-        margin-bottom: 30px;
-        margin-top: 7px;
-        text-align: right;
+        margin-bottom: 25px;
+        margin-top: 5px;
+        text-align: left;
         @media (max-width: 720px) {
           font-size: 15px;
         }
@@ -612,7 +620,7 @@
         color: #333;
         font-weight: normal;
         font-style: italic;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         @media (max-width: 720px) {
           font-size: 14px;
         }
@@ -665,11 +673,11 @@
 
       & button {
         width: 100%;
-        margin-top: 30px;
+        margin-top: 25px;
         height: 45px;
         cursor: pointer;
         border: 1px solid #80594F;
-        background: #80594F;
+        background: rgb(98, 69, 61);
         text-transform: uppercase;
         font-family: "Georgia", serif;
         font-size: 17px;
@@ -677,6 +685,32 @@
         font-weight: normal;
         font-style: italic;
         text-align: center;
+        padding: 0;
+        position: relative;
+
+        &:hover {
+          & div {
+            opacity: 0;
+            transition: 0.3s ease;
+          }
+        }
+
+        & div {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #80594F;
+          z-index: 0;
+          transition: 0.3s ease;
+          @include flex-center;
+        }
+
+        & span {
+          z-index: 3;
+          color: #ffffff;
+        }
       }
 
       &__description {
@@ -788,4 +822,18 @@
 
 .slick-next {
   right: -15px;
+}
+
+
+.slick-dots li {
+  margin: 0;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #80594F;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%2380594F" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+  cursor: pointer;
 }

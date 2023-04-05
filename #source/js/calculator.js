@@ -1,4 +1,3 @@
-
 // ____________________________________________________________________________________________ calculator.js
 
 let costDesign = document.querySelectorAll('.design__slider .design-slide__prise span')

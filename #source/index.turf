@@ -22,7 +22,7 @@
 <script type="text/javascript">
   $('.design__slider').length && $('.design__slider').slick({
     arrows: false,
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -51,7 +51,7 @@
 
   $('.filling__slider').length && $('.filling__slider').slick({
     arrows: false,
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,

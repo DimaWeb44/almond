@@ -235,6 +235,9 @@ body {
   font-style: italic;
   text-align: center;
 }
+.calculator__left .design .design-slide__prise span {
+  margin-right: 7px;
+}
 @media (max-width: 1100px) {
   .calculator__left .design .design-slide__prise {
     font-size: 16px;
@@ -383,7 +386,7 @@ body {
 }
 .calculator__left .layer__box .radio {
   width: 100%;
-  margin-right: 25px;
+  margin-right: 20px;
   padding: 14px;
   border: 1px solid #80594F;
   display: -webkit-box;
@@ -677,7 +680,9 @@ body {
   }
 }
 .calculator__right {
-  height: 100%;
+  position: sticky;
+  top: 25px;
+  height: auto;
   min-width: 340px;
   background-color: #ADB38E;
   padding: 14px;
@@ -687,11 +692,16 @@ body {
     min-width: auto;
   }
 }
+@media (max-height: 799px) {
+  .calculator__right {
+    position: static;
+  }
+}
 .calculator__right__box {
   border: 1px solid #ffffff;
   width: 100%;
   height: 100%;
-  padding: 15px 20px 25px 20px;
+  padding: 15px 20px 10px 20px;
   position: relative;
 }
 .calculator__right__box__icon {
@@ -704,7 +714,7 @@ body {
 .calculator__right__box__title {
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .calculator__right__box__title__text {
   font-size: 48px;
@@ -728,9 +738,9 @@ body {
   color: #80594F;
   font-weight: normal;
   font-style: italic;
-  margin-bottom: 30px;
-  margin-top: 7px;
-  text-align: right;
+  margin-bottom: 25px;
+  margin-top: 5px;
+  text-align: left;
 }
 @media (max-width: 720px) {
   .calculator__right__box input {
@@ -760,7 +770,7 @@ body {
   color: #333;
   font-weight: normal;
   font-style: italic;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 @media (max-width: 720px) {
   .calculator__right__box p {
@@ -809,11 +819,11 @@ body {
 }
 .calculator__right__box button {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 25px;
   height: 45px;
   cursor: pointer;
   border: 1px solid #80594F;
-  background: #80594F;
+  background: rgb(98, 69, 61);
   text-transform: uppercase;
   font-family: "Georgia", serif;
   font-size: 17px;
@@ -821,6 +831,37 @@ body {
   font-weight: normal;
   font-style: italic;
   text-align: center;
+  padding: 0;
+  position: relative;
+}
+.calculator__right__box button:hover div {
+  opacity: 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.calculator__right__box button div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #80594F;
+  z-index: 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.calculator__right__box button span {
+  z-index: 3;
+  color: #ffffff;
 }
 .calculator__right__box__description {
   margin-top: 20px;
@@ -940,4 +981,17 @@ body {
 
 .slick-next {
   right: -15px;
+}
+
+.slick-dots li {
+  margin: 0;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #80594F;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%2380594F" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+  cursor: pointer;
 }

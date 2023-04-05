@@ -31,7 +31,7 @@
                     <div class="design-slide">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <div class="design-slide__prise">
-                            1500 ₽
+                            <span>1500</span> ₽
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <div class="design-slide">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4288.png" alt="photo">
                         <div class="design-slide__prise">
-                            1700 ₽
+                            <span>1700</span> ₽
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="design-slide">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4296.jpg" alt="photo">
                         <div class="design-slide__prise">
-                            2000 ₽
+                            <span>2000</span> ₽
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="design-slide">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4298.jpg" alt="photo">
                         <div class="design-slide__prise">
-                            1300 ₽
+                            <span>1300</span> ₽
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                     <div class="design-slide">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4299.jpg" alt="photo">
                         <div class="design-slide__prise">
-                            1500 ₽
+                            <span>1500</span> ₽
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="design-slide">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <div class="design-slide__prise">
-                            3500 ₽
+                            <span>3500</span> ₽
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <div class="design-slide">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <div class="design-slide__prise">
-                            2100 ₽
+                            <span>2100</span>₽
                         </div>
                     </div>
                 </div>
@@ -181,7 +181,7 @@
             <div class="layer__box">
                 <div class="radio">
                     <label class="custom-radio">
-                        <input type="radio" name="payment-method" value="444">
+                        <input class="layer-prise" type="radio" name="layer" value="1500">
                         <div class="custom-radio-box">
                             <span>1500 ₽</span>
                             <img src="https://ic.pics.livejournal.com/vlladd/12102597/191759/191759_original.jpg"
@@ -192,7 +192,7 @@
                 </div>
                 <div class="radio">
                     <label class="custom-radio">
-                        <input type="radio" name="payment-method" value="444">
+                        <input class="layer-prise" type="radio" name="layer" value="3500">
                         <div class="custom-radio-box">
                             <span>3500 ₽</span>
                             <img src="https://from-ua.com/upload/articles/2019/02/25/large/1551089824_23.jpg"
@@ -203,7 +203,7 @@
                 </div>
                 <div class="radio">
                     <label class="custom-radio">
-                        <input type="radio" name="payment-method" value="444">
+                        <input class="layer-prise" type="radio" name="layer" value="3100">
                         <div class="custom-radio-box">
                             <span>3100 ₽</span>
                             <img src="https://donatewales.org/wp-content/uploads/a/c/6/ac600e77b4ce78ddf14bf11ee04f4a4f.png"
@@ -214,7 +214,7 @@
                 </div>
                 <div class="radio">
                     <label class="custom-radio">
-                        <input type="radio" name="payment-method" value="444">
+                        <input class="layer-prise" type="radio" name="layer" value="2100">
                         <div class="custom-radio-box">
                             <span>2100 ₽</span>
                             <img src="https://images.freeimages.com/images/large-previews/f7f/pineapple-1057494.jpg"
@@ -338,13 +338,16 @@
                 <label class="custom-radio">
                     <input type="radio" name="payment-method" value="444">
                     <div class="custom-radio-box">
-                        <span>Банковской карточкой</span>
+                        <span>Банковской картой</span>
                     </div>
                 </label>
             </div>
-            <button>
-                Узнать Стоимость
-            </button>
+            <a href="#" id="openPrise">
+                <button>
+                    <span>Узнать Стоимость</span>
+                    <div>Узнать Стоимость</div>
+                </button>
+            </a>
             <p class="calculator__right__box__description">
                 Нажимая на кнопку "Узнать Стоимость"
                 вы соглашаетесь с <a href="">политикой конфидециальности</a>
@@ -411,7 +414,7 @@
 <script type="text/javascript">
   $('.design__slider').length && $('.design__slider').slick({
     arrows: false,
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -440,7 +443,7 @@
 
   $('.filling__slider').length && $('.filling__slider').slick({
     arrows: false,
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,

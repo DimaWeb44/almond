@@ -17,7 +17,7 @@
 <script type="text/javascript" src="./lib/jquery.min.js"></script>
 <script type="text/javascript" src="./lib/slider/slick.js"></script>
 <script type="text/javascript" src="./lib/color-picker/index.min.js"></script>
-<script type="text/javascript" src="../lib/modal/jquery.modal.min.js"></script>
+<script type="text/javascript" src="./lib/modal/jquery.modal.min.js"></script>
 <script type="text/javascript" src="./js/main.js"></script>
 <script type="text/javascript">
   $('.design__slider').length && $('.design__slider').slick({
@@ -28,7 +28,25 @@
     slidesToScroll: 1,
     centerMode: true,
     focusOnSelect: true,
-    centerPadding: '175px',
+    centerPadding: '165px',
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: '0',
+          arrows: true,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '0',
+          arrows: true,
+        }
+      },
+    ]
   });
 
   $('.filling__slider').length && $('.filling__slider').slick({
@@ -39,7 +57,25 @@
     slidesToScroll: 1,
     centerMode: true,
     focusOnSelect: true,
-    centerPadding: '175px',
+    centerPadding: '165px',
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: '0',
+          arrows: true,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '0',
+          arrows: true,
+        }
+      },
+    ]
   });
 
   $('a[data-modal]').click(function (event) {

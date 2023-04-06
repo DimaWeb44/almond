@@ -146,9 +146,11 @@
           font-weight: normal;
           font-style: italic;
           text-align: center;
+
           & span {
             margin-right: 7px;
           }
+
           @media (max-width: 1100px) {
             font-size: 16px;
           }
@@ -509,10 +511,25 @@
           height: 100%;
           background: #fafafa;
           @include flex-center;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+
+          & img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+          }
 
           &__content {
             @include flex-center;
             flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
 
             & svg {
               margin-bottom: 30px;
@@ -529,6 +546,19 @@
               }
             }
           }
+
+          & input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            background: transparent;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -539,10 +569,12 @@
     top: 25px;
     height: auto;
     min-width: 340px;
+    max-width: 480px;
     background-color: #ADB38E;
     padding: 14px;
     @media (max-width: 720px) {
       min-width: auto;
+      max-width: 100%;
     }
     @media (max-height: 799px) {
       position: static;

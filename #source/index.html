@@ -15,6 +15,7 @@
             <div class="design__slider">
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <div class="design-slide__prise">
                             <span>1500</span> ₽
@@ -23,6 +24,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4288.png" alt="photo">
                         <div class="design-slide__prise">
                             <span>1700</span> ₽
@@ -31,6 +33,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4296.jpg" alt="photo">
                         <div class="design-slide__prise">
                             <span>2000</span> ₽
@@ -39,14 +42,17 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4298.jpg" alt="photo">
                         <div class="design-slide__prise">
                             <span>1300</span> ₽
                         </div>
+
                     </div>
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4299.jpg" alt="photo">
                         <div class="design-slide__prise">
                             <span>1500</span> ₽
@@ -55,6 +61,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <div class="design-slide__prise">
                             <span>3500</span> ₽
@@ -63,6 +70,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <div class="design-slide__prise">
                             <span>2100</span>₽
@@ -76,6 +84,7 @@
             <div class="filling__slider">
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <a href="#filling-1" data-modal class="design-slide__prise">
                             <span>Шоколад</span>
@@ -87,6 +96,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4288.png" alt="photo">
                         <a href="#filling-2" data-modal class="design-slide__prise">
                             <span>Клубничный мармелад</span>
@@ -98,6 +108,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4296.jpg" alt="photo">
                         <a href="#filling-3" data-modal class="design-slide__prise">
                             <span>Смородина-лаванда</span>
@@ -109,6 +120,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4298.jpg" alt="photo">
                         <a href="#filling-4" data-modal class="design-slide__prise">
                             <span>Ванильный</span>
@@ -120,6 +132,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/img_4299.jpg" alt="photo">
                         <a href="#filling-5" data-modal class="design-slide__prise">
                             <span>Тирамису</span>
@@ -131,6 +144,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <a href="#filling-6" data-modal class="design-slide__prise">
                             <span>Чизкейк</span>
@@ -142,6 +156,7 @@
                 </div>
                 <div>
                     <div class="design-slide">
+                        <input type="hidden">
                         <img src="https://four.alexmade.ru/wp-content/uploads/2023/03/3.webp" alt="photo">
                         <a href="#filling-7" data-modal class="design-slide__prise">
                             <span>Маскарпоне</span>
@@ -290,6 +305,8 @@
                         </svg>
                         <span>Загрузите картинку</span>
                     </div>
+                    <input type='file' accept="image/*"/>
+                    <img id="myImg" src="#">
                 </div>
             </div>
         </div>
@@ -305,8 +322,8 @@
             <input required autocomplete="off" id="name" type="text">
             <label for="phone">Введите номер телефона</label>
             <input required autocomplete="off" id="phone" type="text">
-            <label for="date">Выберите дату доставки</label>
-            <input required autocomplete="off" id="date" type="date">
+            <label for="datePickerId">Выберите дату доставки</label>
+            <input required autocomplete="off" id="datePickerId" type="date">
             <label for="network">Cсылка на соц.сеть</label>
             <input id="network" autocomplete="off" type="text">
             <p>Мы готовим изысканные торты на заказ для особенных моментов в жизни: от уютного семейного торжества до
